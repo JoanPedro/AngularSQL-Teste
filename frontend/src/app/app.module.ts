@@ -15,6 +15,8 @@ import { MatListModule} from '@angular/material/list';
 import { HomeComponent } from './view/home/home.component';
 import { MovieCrudComponent } from './view/movie-crud/movie-crud.component';
 import { RedDirective } from './directives/red.directive';
+import { ForDirective } from './directives/for.directive';
+import { MovieCreateComponent } from './components/movie/movie-create/movie-create.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { RedDirective } from './directives/red.directive';
     HomeComponent,
     MovieCrudComponent,
     RedDirective,
+    ForDirective,
+    MovieCreateComponent,
   ],
   imports: [
     BrowserModule,
