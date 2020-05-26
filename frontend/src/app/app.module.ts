@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule} from '@angular/material/list';
 import { HomeComponent } from './view/home/home.component';
 import { MovieCrudComponent } from './view/movie-crud/movie-crud.component';
+import { RedDirective } from './directives/red.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MovieCrudComponent } from './view/movie-crud/movie-crud.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    MovieCrudComponent
+    MovieCrudComponent,
+    RedDirective,
   ],
   imports: [
     BrowserModule,
