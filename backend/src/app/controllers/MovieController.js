@@ -33,8 +33,8 @@ class MovieController {
       attributes: ['name', 'sinopses', 'actors'],
     });
 
-    if (!checkMovie) {
-      res.status(401).json({ error: 'There are not movies.' });
+    if (checkMovie.length === 0) {
+      res.status(303).json({ error: 'There are not movies.' });
     }
 
     return res.json(checkMovie);

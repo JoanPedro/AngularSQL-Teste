@@ -11,7 +11,7 @@ class ListController {
     });
 
     if (!checkMovie) {
-      res.status(401).json({ error: 'Sorry, movie does not found.' });
+      res.status(303).json({ error: 'Sorry, movie does not found.' });
     }
 
     return res.json(checkMovie);
