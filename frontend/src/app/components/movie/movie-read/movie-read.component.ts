@@ -11,6 +11,7 @@ export class MovieReadComponent implements OnInit {
 
   movies: Movie[]
 
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {

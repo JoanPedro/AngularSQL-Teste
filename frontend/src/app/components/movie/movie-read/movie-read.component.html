@@ -1,1 +1,9 @@
-<p>movie-read works!</p>
+<ul>
+  <li *ngFor="let movie of movies">
+    Título do Fílme: {{ movie.name }}
+    <p></p>
+    Sinópse: {{ movie.sinopses }}
+    <p></p>
+    Atores: {{ movie.actors }}
+  </li>
+</ul>
