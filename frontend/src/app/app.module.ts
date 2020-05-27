@@ -23,7 +23,11 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
-import { MovieReadComponent } from './components/movie/movie-read/movie-read.component'
+import { MovieReadComponent } from './components/movie/movie-read/movie-read.component';
+import { MovieRead2Component } from './components/movie/movie-read2/movie-read2.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort'
 
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ import { MovieReadComponent } from './components/movie/movie-read/movie-read.com
     ForDirective,
     MovieCreateComponent,
     MovieReadComponent,
+    MovieRead2Component,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,9 @@ import { MovieReadComponent } from './components/movie/movie-read/movie-read.com
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
