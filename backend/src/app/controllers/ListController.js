@@ -2,13 +2,10 @@ import Movie from '../models/Movie'; // Importa o Model padrão de Usuário.
 
 class ListController {
   async index(req, res) {
-    const movie = req.params.name;
+    const movieId = req.params.id;
     // movie = movie.toLowerCase();
 
-    const checkMovie = await Movie.findOne({
-      where: { name: movie },
-      attributes: ['id', 'name', 'sinopses', 'actors'],
-    });
+    const checkMovie = await Movie.findByPk(movieId);
 
     if (!checkMovie) {
       res.status(303).json({ error: 'Sorry, movie does not found.' });

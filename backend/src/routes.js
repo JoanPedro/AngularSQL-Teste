@@ -10,6 +10,6 @@ routes.post('/movies', MovieController.store);
 routes.get('/movies', MovieController.index);
 routes.put('/movies', MovieController.update);
 
-routes.get('/movie/:name', ListController.index);
+routes.get('/movie/:id', ListController.index);
 routes.put('/movie/:id', ListController.update);
 export default routes;
