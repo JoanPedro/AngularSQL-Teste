@@ -16,6 +16,27 @@ class ListController {
 
     return res.json(checkMovie);
   }
+
+  async update(req, res) {
+    const movieId = req.params.id;
+    const movie = await Movie.findByPk(movieId);
+
+    if (!movie) {
+      return res.status(400).json({ error: 'Movie does not exists' });
+    }
+
+    const { id, name, sinopses, actors } = await movie.update(req.body, {
+      returning: true,
+      plain: true,
+    });
+
+    return res.json({
+      id,
+      name,
+      sinopses,
+      actors,
+    });
+  }
 }
 
 export default new ListController();
