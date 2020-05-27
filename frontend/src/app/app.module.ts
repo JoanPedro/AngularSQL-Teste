@@ -17,6 +17,7 @@ import { MovieCrudComponent } from './view/movie-crud/movie-crud.component';
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { MovieCreateComponent } from './components/movie/movie-create/movie-create.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MovieCreateComponent } from './components/movie/movie-create/movie-crea
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
