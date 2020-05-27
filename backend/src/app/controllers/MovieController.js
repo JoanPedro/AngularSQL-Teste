@@ -39,6 +39,33 @@ class MovieController {
 
     return res.json(checkMovie);
   }
+
+  async update(req, res) {
+    const oldMovie = { ...req.body };
+
+    const movie = await Movie.findOne({
+      where: { name: oldMovie.name },
+    });
+
+    if (oldMovie.name !== movie.name) {
+      const movieExists = await Movie.findOne({
+        where: { name: oldMovie.name },
+      });
+
+      if (movieExists) {
+        return res.status(400).json({ error: 'Movie alredy exists.' });
+      }
+    }
+
+    const { id, name, sinopses, actors } = await movie.update(oldMovie);
+
+    return res.json({
+      id,
+      name,
+      sinopses,
+      actors,
+    });
+  }
 }
 
 export default new MovieController();

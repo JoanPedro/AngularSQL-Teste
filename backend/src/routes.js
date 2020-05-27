@@ -8,6 +8,7 @@ const routes = express.Router();
 
 routes.post('/movies', MovieController.store);
 routes.get('/movies', MovieController.index);
+routes.put('/movies', MovieController.update);
 
 routes.get('/movie/:name', ListController.index);
 export default routes;
