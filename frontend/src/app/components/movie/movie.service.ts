@@ -39,27 +39,39 @@ export class MovieService {
     )
   }
 
-  errorHandler(e: any): Observable<any> {
-    this.showMessage(e.error.error, true)
-    return EMPTY
-  }
-
   read(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.baseUrl}/movies`)
+    return this.http.get<Movie[]>(`${this.baseUrl}/movies`).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    )
   }
 
   readById(id: number): Observable<Movie> {
     const url = `${this.baseUrl}/movie/${id}`
-    return this.http.get<Movie>(url)
+    return this.http.get<Movie>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    )
   }
 
   update(movie: Movie): Observable<Movie> {
     const url = `${this.baseUrl}/movie/${movie.id}`
-    return this.http.put<Movie>(url, movie)
+    return this.http.put<Movie>(url, movie).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    )
   }
 
   delete(id: number): Observable<Movie> {
     const url = `${this.baseUrl}/movie/${id}`
-    return this.http.delete<Movie>(url)
+    return this.http.delete<Movie>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+    )
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage(e.error.error, true)
+    return EMPTY
   }
 }
