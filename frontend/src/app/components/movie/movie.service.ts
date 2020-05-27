@@ -1,8 +1,9 @@
+import { map, catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Movie } from './movie.model';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,12 @@ export class MovieService {
   constructor(private snackbar: MatSnackBar,
     private http : HttpClient) { }
 
-  showMessage(msg: string): void {
+  showMessage(msg: string, isError: boolean = false): void {
     this.snackbar.open(msg, 'X', {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
+      panelClass: isError ? ['msg-error'] : ['msg-success'],
     })
   }
 
@@ -31,7 +33,15 @@ export class MovieService {
         }),
         observe: 'body'
       }
+    ).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
     )
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage(e.error.error, true)
+    return EMPTY
   }
 
   read(): Observable<Movie[]> {
