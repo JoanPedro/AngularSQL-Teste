@@ -11,10 +11,9 @@ import { Router } from '@angular/router';
 export class MovieCreateComponent implements OnInit {
 
   movie: Movie = {
-    name: 'A Lagoa Azul',
-    sinopses: `após um naufrágio, duas crianças e o velho cozinheiro de um navio
-    vão parar em uma ilha deserta no oceano pacífico.`,
-    actors: `brookie shields; Christoper Atkins; Elva leff; Leo mckern`
+    name: '',
+    sinopses: '',
+    actors: ''
   }
 
   constructor(private movieService: MovieService,

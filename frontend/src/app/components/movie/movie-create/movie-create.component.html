@@ -1,9 +1,25 @@
-<p>movie-create works!</p>
+<mat-card>
+  <mat-card-title>Novo Filme</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Nome" 
+        [(ngModel)]="movie.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Sinopse"
+        [(ngModel)]="movie.sinopses" name="sinopses">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Atores (Separados por ; e espaço)"
+        [(ngModel)]="movie.actors" name="actors">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="createMovie()" color="primary">
+    Salvar
+  </button>
+  
+  <button mat-raised-button (click)="cancel()" color="accent">
+    Cancelar
+  </button>
+</mat-card>
 
-<button mat-raised-button (click)="createMovie()" color="primary">
-  Salvar
-</button>
-
-<button mat-raised-button (click)="cancel()" color="danger">
-  Cancelar
-</button>
