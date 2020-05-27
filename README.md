@@ -27,7 +27,7 @@
 
 ## Tecnologias 
 <p align="center">
-    <a href="https://github.com/JoanPedro/TesteDev/tree/master/Backend"> 
+    <a href="https://github.com/JoanPedro/TesteDev/tree/master/backend"> 
       <img alt="Backend" src="https://img.shields.io/badge/Backend-Finalizado-success">
     </a>
     <a href="https://github.com/JoanPedro/TesteDev/tree/master/frontend">
