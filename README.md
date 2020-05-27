@@ -18,7 +18,6 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
@@ -26,7 +25,7 @@
 
 <br>
 
-## :rocket: Tecnologias 
+## Tecnologias 
 <p align="center">
     <a href="https://github.com/JoanPedro/TesteDev/tree/master/Backend"> 
       <img alt="Backend" src="https://img.shields.io/badge/Backend-Finalizado-success">
