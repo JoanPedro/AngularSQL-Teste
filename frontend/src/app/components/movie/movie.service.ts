@@ -36,4 +36,14 @@ export class MovieService {
   read(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.baseUrl)
   }
+
+  readById(id: string): Observable<Movie> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Movie>(url)
+  }
+
+  update(movie: Movie): Observable<Movie> {
+    const url = `${this.baseUrl}/${movie.id}`
+    return this.http.put<Movie>(url, movie)
+  }
 }
