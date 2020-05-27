@@ -3,7 +3,7 @@ import Movie from '../models/Movie'; // Importa o Model padrão de Usuário.
 class MovieController {
   async store(req, res) {
     let movieInfo = { ...req.body };
-
+    console.log(movieInfo);
     movieInfo = JSON.parse(
       JSON.stringify(movieInfo, (a, b) => {
         return typeof b === 'string' ? b.toLowerCase() : b;

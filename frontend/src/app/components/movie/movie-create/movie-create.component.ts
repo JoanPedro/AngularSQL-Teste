@@ -1,3 +1,4 @@
+import { Movie } from './../movie.model';
 import { MovieService } from './../movie.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,6 +10,13 @@ import { Router } from '@angular/router';
 })
 export class MovieCreateComponent implements OnInit {
 
+  movie: Movie = {
+    name: 'A Lagoa Azul',
+    sinopses: `após um naufrágio, duas crianças e o velho cozinheiro de um navio
+    vão parar em uma ilha deserta no oceano pacífico.`,
+    actors: `brookie shields; Christoper Atkins; Elva leff; Leo mckern`
+  }
+
   constructor(private movieService: MovieService,
       private router: Router) { }
 
@@ -17,7 +25,10 @@ export class MovieCreateComponent implements OnInit {
   }
 
   createMovie(): void {
-    this.movieService.showMessage('Filme registado com sucesso!')
+    this.movieService.create(this.movie).subscribe(() => {
+      this.movieService.showMessage('Filme registado com sucesso!')
+      this.router.navigate(['/movies'])
+    })
   }
 
   cancel(): void {
