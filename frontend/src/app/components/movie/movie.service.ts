@@ -47,4 +47,9 @@ export class MovieService {
     const url = `${this.baseUrl}/movie/${movie.id}`
     return this.http.put<Movie>(url, movie)
   }
+
+  delete(id: string): Observable<Movie> {
+    const url = `${this.baseUrl}/movie/${id}`
+    return this.http.delete<Movie>(url)
+  }
 }
