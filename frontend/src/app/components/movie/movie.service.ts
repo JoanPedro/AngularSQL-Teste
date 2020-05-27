@@ -29,6 +29,11 @@ export class MovieService {
           'Content-Type':  'application/json'
         }),
         observe: 'body'
-      })
+      }
+    )
+  }
+
+  read(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.baseUrl)
   }
 }

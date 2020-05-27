@@ -22,7 +22,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { MovieReadComponent } from './components/movie/movie-read/movie-read.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatInputModule } from '@angular/material/input'
     RedDirective,
     ForDirective,
     MovieCreateComponent,
+    MovieReadComponent,
   ],
   imports: [
     BrowserModule,
