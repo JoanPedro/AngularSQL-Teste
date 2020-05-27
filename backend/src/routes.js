@@ -12,4 +12,6 @@ routes.put('/movies', MovieController.update);
 
 routes.get('/movie/:id', ListController.index);
 routes.put('/movie/:id', ListController.update);
+routes.delete('/movie/:id', ListController.delete);
+
 export default routes;

@@ -11,7 +11,7 @@ class MovieController {
     // );
 
     const MovieExists = await Movie.findOne({
-      where: { name: movieInfo.name },
+      where: { name: movieInfo.name, deleted_at: null },
     });
 
     if (MovieExists) {
@@ -31,6 +31,7 @@ class MovieController {
 
   async index(req, res) {
     const checkMovie = await Movie.findAll({
+      where: { deleted_at: null },
       attributes: ['id', 'name', 'sinopses', 'actors'],
     });
 
@@ -45,7 +46,7 @@ class MovieController {
     const oldMovie = { ...req.body };
 
     const movie = await Movie.findOne({
-      where: { name: oldMovie.name },
+      where: { name: oldMovie.name, deleted_at: null },
     });
 
     if (oldMovie.name !== movie.name) {

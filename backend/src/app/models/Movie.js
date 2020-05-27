@@ -7,6 +7,7 @@ class Movies extends Model {
         name: Sequelize.STRING,
         sinopses: Sequelize.STRING,
         actors: Sequelize.STRING,
+        deleted_at: Sequelize.DATE,
       },
       {
         sequelize,
