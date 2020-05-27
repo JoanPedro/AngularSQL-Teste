@@ -29,7 +29,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
-import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component'
+import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component';
 
 @NgModule({
   declarations: [
