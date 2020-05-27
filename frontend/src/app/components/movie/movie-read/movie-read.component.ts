@@ -11,12 +11,15 @@ export class MovieReadComponent implements OnInit {
 
   movies: Movie[]
 
+  displayedColumns = ['name', 'sinopses', 'actors']
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.movieService.read().subscribe(movies => {
+
       this.movies = movies
+      
       console.log(movies)
     })
   }

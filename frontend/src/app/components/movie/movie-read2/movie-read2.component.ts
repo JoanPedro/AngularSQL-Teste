@@ -1,8 +1,9 @@
+import { Movie } from './../movie.model';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { MovieRead2DataSource, MovieRead2Item } from './movie-read2-datasource';
+import { MovieRead2DataSource } from './movie-read2-datasource';
 
 @Component({
   selector: 'app-movie-read2',
@@ -12,11 +13,11 @@ import { MovieRead2DataSource, MovieRead2Item } from './movie-read2-datasource';
 export class MovieRead2Component implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<MovieRead2Item>;
+  @ViewChild(MatTable) table: MatTable<Movie>;
   dataSource: MovieRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'name', 'sinopses', 'actors'];
 
   ngOnInit() {
     this.dataSource = new MovieRead2DataSource();

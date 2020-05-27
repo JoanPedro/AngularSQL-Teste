@@ -8,8 +8,20 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
       <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Name Sinopses -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Sinopse</th>
+      <td mat-cell *matCellDef="let row">{{row.sinopses}}</td>
+    </ng-container>
+
+    <!-- Name Actors -->
+    <ng-container matColumnDef="actors">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Atores</th>
+      <td mat-cell *matCellDef="let row">{{row.actors}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

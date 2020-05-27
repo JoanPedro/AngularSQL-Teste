@@ -2,8 +2,8 @@ import Movie from '../models/Movie'; // Importa o Model padrão de Usuário.
 
 class ListController {
   async index(req, res) {
-    let movie = req.params.name;
-    movie = movie.toLowerCase();
+    const movie = req.params.name;
+    // movie = movie.toLowerCase();
 
     const checkMovie = await Movie.findOne({
       where: { name: movie },

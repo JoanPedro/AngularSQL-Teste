@@ -1,6 +1,6 @@
 export interface Movie {
   id?: number
   name: string
-  sinopses: string
+  sinopses?: string
   actors: string
 }

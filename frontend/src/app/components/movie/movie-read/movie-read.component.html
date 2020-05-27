@@ -1,9 +1,25 @@
-<ul>
-  <li *ngFor="let movie of movies">
-    Título do Fílme: {{ movie.name }}
-    <p></p>
-    Sinópse: {{ movie.sinopses }}
-    <p></p>
-    Atores: {{ movie.actors }}
-  </li>
-</ul>
+<div class="mat-elevation-z5">
+  <table mat-table [dataSource]="movies">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef >Nome</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="sinopses">
+      <th mat-header-cell *matHeaderCellDef >Sinopse</th>
+      <td mat-cell *matCellDef="let row">{{row.sinopses}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="actors">
+      <th mat-header-cell *matHeaderCellDef >Atores</th>
+      <td mat-cell *matCellDef="let row">{{row.actors}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
