@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class MovieService {
 
-  baseUrl = "http://localhost:3333/movies"
+  // baseUrl = "http://localhost:3333/movies"
+  baseUrl = "http://localhost:3333"
 
   constructor(private snackbar: MatSnackBar,
     private http : HttpClient) { }
@@ -23,7 +24,7 @@ export class MovieService {
   }
 
   create(movie: Movie): Observable<Movie> {
-    return this.http.post<Movie>(this.baseUrl, 
+    return this.http.post<Movie>(`${this.baseUrl}/movies`, 
       movie, {
         headers: new HttpHeaders({
           'Content-Type':  'application/json'
@@ -34,16 +35,16 @@ export class MovieService {
   }
 
   read(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.baseUrl)
+    return this.http.get<Movie[]>(`${this.baseUrl}/movies`)
   }
 
   readById(id: string): Observable<Movie> {
-    const url = `${this.baseUrl}/${id}`
+    const url = `${this.baseUrl}/movie/${id}`
     return this.http.get<Movie>(url)
   }
 
   update(movie: Movie): Observable<Movie> {
-    const url = `${this.baseUrl}/${movie.id}`
+    const url = `${this.baseUrl}/movie/${movie.id}`
     return this.http.put<Movie>(url, movie)
   }
 }
