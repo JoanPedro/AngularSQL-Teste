@@ -1,6 +1,12 @@
 <div class="mat-elevation-z5">
   <table mat-table [dataSource]="movies">
     <!-- Name Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef >id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef >Nome</th>
       <td mat-cell *matCellDef="let row">{{row.name}}</td>
@@ -22,7 +28,7 @@
      <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef >Ações</th>
       <td mat-cell *matCellDef="let row">
-        <a routerLink="" class="edit">
+        <a routerLink="/movies/update/{{row.id}}" class="edit">
           <i class="material-icons">edit</i>
         </a>
         <a routerLink="" class="delete">

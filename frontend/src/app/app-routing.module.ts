@@ -1,3 +1,4 @@
+import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,7 +18,11 @@ const routes: Routes = [
   {
     path: "movies/create",
     component: MovieCreateComponent
-  }
+  }, 
+  {
+    path: "movies/update/:id",
+    component: MovieUpdateComponent
+  },
 ];
 
 @NgModule({
