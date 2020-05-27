@@ -36,7 +36,7 @@ class MovieController {
     });
 
     if (checkMovie.length === 0) {
-      res.status(303).json({ error: 'There are not movies.' });
+      res.status(303).json({ error: 'There are no movies.' });
     }
 
     return res.json(checkMovie);
