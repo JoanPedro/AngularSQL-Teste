@@ -11,7 +11,7 @@ export class MovieReadComponent implements OnInit {
 
   movies: Movie[]
 
-  displayedColumns = ['name', 'sinopses', 'actors']
+  displayedColumns = ['name', 'sinopses', 'actors', 'action']
 
   constructor(private movieService: MovieService) { }
 
