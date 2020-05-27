@@ -7,7 +7,7 @@ class ListController {
 
     const checkMovie = await Movie.findOne({
       where: { name: movie },
-      attributes: ['sinopses', 'actors'],
+      attributes: ['id', 'name', 'sinopses', 'actors'],
     });
 
     if (!checkMovie) {

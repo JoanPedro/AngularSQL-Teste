@@ -18,10 +18,11 @@ class MovieController {
       return res.status(400).json({ error: 'Movie alredy exists.' });
     }
 
-    const { name, sinopses, actors } = await Movie.create(movieInfo);
+    const { id, name, sinopses, actors } = await Movie.create(movieInfo);
     const actorsArray = actors.split('; ');
 
     return res.json({
+      id,
       name,
       sinopses,
       actors: actorsArray,
@@ -30,7 +31,7 @@ class MovieController {
 
   async index(req, res) {
     const checkMovie = await Movie.findAll({
-      attributes: ['name', 'sinopses', 'actors'],
+      attributes: ['id', 'name', 'sinopses', 'actors'],
     });
 
     if (checkMovie.length === 0) {
