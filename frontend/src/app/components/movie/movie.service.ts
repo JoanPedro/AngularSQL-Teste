@@ -38,7 +38,7 @@ export class MovieService {
     return this.http.get<Movie[]>(`${this.baseUrl}/movies`)
   }
 
-  readById(id: string): Observable<Movie> {
+  readById(id: number): Observable<Movie> {
     const url = `${this.baseUrl}/movie/${id}`
     return this.http.get<Movie>(url)
   }
@@ -48,7 +48,7 @@ export class MovieService {
     return this.http.put<Movie>(url, movie)
   }
 
-  delete(id: string): Observable<Movie> {
+  delete(id: number): Observable<Movie> {
     const url = `${this.baseUrl}/movie/${id}`
     return this.http.delete<Movie>(url)
   }

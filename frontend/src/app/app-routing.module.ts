@@ -1,3 +1,4 @@
+import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component';
 import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "movies/update/:id",
     component: MovieUpdateComponent
+  },   
+  {
+    path: "movies/delete/:id",
+    component: MovieDeleteComponent
   },
 ];
 

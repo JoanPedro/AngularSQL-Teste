@@ -1,20 +1,16 @@
-import { Movie } from './../movie.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MovieService } from './../movie.service';
+import { Movie } from './../movie.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-update',
-  templateUrl: './movie-update.component.html',
-  styleUrls: ['./movie-update.component.css']
+  selector: 'app-movie-delete',
+  templateUrl: './movie-delete.component.html',
+  styleUrls: ['./movie-delete.component.css']
 })
-export class MovieUpdateComponent implements OnInit {
+export class MovieDeleteComponent implements OnInit {
 
-  movie: Movie = {
-    name: '',
-    sinopses: '',
-    actors: ''
-  }
+  movie: Movie
 
   constructor(private movieService: MovieService,
     private router: Router,
@@ -27,9 +23,9 @@ export class MovieUpdateComponent implements OnInit {
     })
   }
 
-  updateMovie(): void {
-    this.movieService.update(this.movie).subscribe(() => {
-      this.movieService.showMessage('Filme Atualizado com Sucesso.')
+  deleteMovie(): void {
+    this.movieService.delete(this.movie.id).subscribe(() => {
+      this.movieService.showMessage('Filme excluido com sucesso.')
       this.router.navigate(['/movies'])
     })
   }

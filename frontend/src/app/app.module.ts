@@ -28,7 +28,8 @@ import { MovieRead2Component } from './components/movie/movie-read2/movie-read2.
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component'
+import { MovieUpdateComponent } from './components/movie/movie-update/movie-update.component';
+import { MovieDeleteComponent } from './components/movie/movie-delete/movie-delete.component'
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MovieUpdateComponent } from './components/movie/movie-update/movie-upda
     MovieReadComponent,
     MovieRead2Component,
     MovieUpdateComponent,
+    MovieDeleteComponent,
   ],
   imports: [
     BrowserModule,
