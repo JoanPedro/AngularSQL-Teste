@@ -25,4 +25,4 @@ class Actor extends Model {
   }
 }
 
-export default Actor; // Exporta a Classe Actor criada extendida do Model modelo.
+export default Actor;
