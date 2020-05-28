@@ -8,13 +8,18 @@ const upload = multer(multerConfig);
 import MovieController from './app/controllers/MovieController'
 import FileController from './app/controllers/FileController'
 import ActorController from './app/controllers/ActorController'
+
 //
 
 routes.post('/movies', MovieController.store);
 routes.get('/movies', MovieController.index);
+routes.put('/movies/:id', MovieController.update);
+
 //
 
 routes.post('/actors', ActorController.store);
+routes.get('/actors', ActorController.index);
+routes.put('/actors/:id', ActorController.update);
 
 //
 

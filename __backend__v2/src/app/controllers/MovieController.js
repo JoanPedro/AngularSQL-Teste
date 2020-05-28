@@ -6,6 +6,17 @@ class MovieController {
   async store(req, res) {
 
     const { img ,actors, ...data } = req.body;
+
+    if(!data) {
+      return res.status(400).json({error: 'No movie has been informed.'});
+    }
+
+    const checkMovie = Movie.findOne({ where: { name: data.name }});
+
+    if(checkMovie === null) {
+      return res.status(400).json({error: 'The movie already exists.'})
+    }
+
     const movie = await Movie.create(data);
 
     if(actors && actors.length > 0) {
@@ -13,7 +24,7 @@ class MovieController {
     }
 
     if(img && img.length > 0) {
-      movie.setImg(img)
+      movie.setImg(img);
     }
 
     return res.status(201).json({msg: "Movie has been create."});
@@ -23,7 +34,7 @@ class MovieController {
 
     const movie = await Movie.findAll({
 
-      attributes: ['id', 'name', 'sinopse', 'img_id'],
+      attributes: ['id', 'name', 'sinopse'],
       include: [
         {
           model: File,
@@ -36,10 +47,43 @@ class MovieController {
         {
           model: Actor,
           as: 'actors',
+          attributes: ['id', 'name'],
           through: { attributes: [] },
         }
       ],
     });
+
+    return res.json(movie);
+  }
+
+  async update(req, res) {
+    const { id } = req.params;
+
+    const movie = await Movie.findByPk(id);
+
+    if(!movie) {
+      return res.status(400).json({error: 'Movie does not found.'})
+    }    
+
+    const { img, actors, ...data } = req.body;
+
+    if(data.name && !(data.name === movie.name)) {
+
+      const checkMovie = await Movie.findOne({ where: {name: data.name }})
+
+      if(checkMovie) {
+        return res.status(400).json({error: 'Already exists a movie with this name.'})
+      }
+    }
+    await movie.update(data);
+
+    if(actors && actors.length > 0) {
+      movie.setActors(actors);
+    }
+
+    if(img && img.length > 0) {
+      movie.setImg(img);
+    }
 
     return res.json(movie);
   }
