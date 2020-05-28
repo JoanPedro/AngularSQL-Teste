@@ -5,8 +5,6 @@ class Actor extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        sinopse: Sequelize.STRING,
-        deleted_at: Sequelize.DATE,
       },
       {
         sequelize,

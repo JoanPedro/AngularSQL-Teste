@@ -2,8 +2,11 @@
 
 import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
+import Actor from '../app/models/Actor';
+import Movie from '../app/models/Movie';
+import File from '../app/models/File';
 
-const models = [];
+const models = [Actor, Movie, File];
 
 class Database {
   constructor() {
@@ -21,4 +24,4 @@ class Database {
   }
 }
 
-export default new Database(); // Cria uma nova instância de Database()
+export default new Database();

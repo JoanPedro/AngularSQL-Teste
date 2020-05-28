@@ -19,7 +19,6 @@ class Movie extends Model {
   static associate(models) {
 
     this.belongsTo(models.File, { foreignKey: 'img_id', as: 'img' });
-    
     this.belongsToMany(models.Actor, { 
       through: 'pivot',
       as: 'actors',
@@ -28,4 +27,4 @@ class Movie extends Model {
   }
 }
 
-export default Movie; // Exporta a Classe Movie criada extendida do Model modelo.
+export default Movie;
