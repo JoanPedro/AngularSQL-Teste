@@ -1,19 +1,25 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('movies', {
+    return queryInterface.createTable('pivot', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      sinopse: {
-        type: Sequelize.STRING,
+      movie_id: {
+        type: Sequelize.INTEGER,
         allowNull: true,
+        references: { model: 'movies', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+      },
+      actor_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: 'actors', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       },
       created_at: {
         type: Sequelize.DATE,
@@ -23,14 +29,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      deleted_at: {
-        type: Sequelize.DATE,
-        allowNull: true,
-      }
     });
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('movies');
+    return queryInterface.dropTable('pivot');
   },
 };

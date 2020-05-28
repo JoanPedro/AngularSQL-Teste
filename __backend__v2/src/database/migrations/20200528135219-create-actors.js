@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('movies', {
+    return queryInterface.createTable('actors', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -11,10 +11,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      sinopse: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -23,14 +19,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      deleted_at: {
-        type: Sequelize.DATE,
-        allowNull: true,
-      }
     });
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('movies');
+    return queryInterface.dropTable('actors');
   },
 };
