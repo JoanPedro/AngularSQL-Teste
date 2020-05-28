@@ -26,7 +26,7 @@ ao invés do default utilize: ``` ... -e POSTGRES_USER=username ```. Em que **us
 ``` yarn db:migrate ```
 
 ## Tecnologias
-- express;
+- express; 
 - pg;
 - sequelize;
 - multer;
