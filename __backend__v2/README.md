@@ -6,12 +6,12 @@
   🚀 Projeto Solicitado
 </h4>
 <p align="center">
-  <img alt="Languages" src="https://img.shields.io/github/languages/count/JoanPedro/TesteDev">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/JoanPedro/AngularSQL-Teste">
 
-  <img alt="Size" src="https://img.shields.io/github/repo-size/JoanPedro/TesteDev">
+  <img alt="Size" src="https://img.shields.io/github/repo-size/JoanPedro/AngularSQL-Teste">
   
-  <a href="https://github.com/JoanPedro/TesteDev/commits/master">
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/JoanPedro/TesteDev">
+  <a href="https://github.com/JoanPedro/AngularSQL-Teste/commits/master">
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/JoanPedro/AngularSQL-Teste">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
@@ -27,10 +27,10 @@
 
 ## Tecnologias 
 <p align="center">
-    <a href="https://github.com/JoanPedro/TesteDev/tree/master/Backend"> 
+    <a href="https://github.com/JoanPedro/AngularSQL-Teste/tree/master/backend"> 
       <img alt="Backend" src="https://img.shields.io/badge/Backend-Finalizado-success">
     </a>
-    <a href="https://github.com/JoanPedro/TesteDev/tree/master/frontend">
+    <a href="https://github.com/JoanPedro/AngularSQL-Teste/tree/master/frontend">
       <img alt="Frontend" src="https://img.shields.io/badge/Frontend-Finalizado-success">
     </a>
 </p>
